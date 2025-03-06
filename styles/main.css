@@ -103,23 +103,20 @@ header {
 
 /* Dropdown Menu for Mobile */
 .navbar .dropdown-menu {
-    display: none;
+    display: none; /* Hidden by default */
     position: absolute;
-    top: 100%;
-    right: 0;
+    top: 80px; /* Adjusted to move the menu further down */
+    right: 10px; /* Spaced from the right edge */
     background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for distinction */
+    border: 1px solid #ddd; /* Add a light border */
+    border-radius: 8px; /* Rounded corners */
     overflow: hidden;
     z-index: 1001;
     list-style: none;
     padding: 0;
-    margin: 0;
-    width: 200px;
-}
-
-.navbar .dropdown-menu.active {
-    display: block;
+    margin: 0; /* Removed extra margin */
+    width: 180px; /* Reduced width for better fit */
 }
 
 .navbar .dropdown-menu a {
@@ -128,36 +125,39 @@ header {
     color: var(--dark-color);
     text-decoration: none;
     font-size: 1rem;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0; /* Add a divider between items */
+}
+
+.navbar .dropdown-menu a:last-child {
+    border-bottom: none; /* Remove divider for the last item */
 }
 
 .navbar .dropdown-menu a:hover {
-    background-color: var(--light-color);
+    background-color: var(--light-color); /* Highlight on hover */
 }
 
+/* Menu Toggle Button */
 .navbar .menu-toggle {
     display: none; /* Hidden by default */
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--primary-color);
+    position: relative; /* Ensure proper positioning */
+    z-index: 1002; /* Ensure it stays above the dropdown menu */
 }
 
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
+        display: none; /* Hide default nav links */
     }
 
     .navbar .menu-toggle {
-        display: block;
+        display: block; /* Show menu toggle button */
     }
 
     .navbar .dropdown-menu {
-        display: none;
-    }
-
-    .navbar .dropdown-menu.active {
-        display: block;
+        display: block; /* Show dropdown menu when toggled */
     }
 }
 
@@ -525,4 +525,32 @@ footer {
 .team-member .member-img {
     max-width: 150px;
     margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background: white;
+    padding: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
