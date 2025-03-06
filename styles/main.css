@@ -90,25 +90,75 @@ header {
     color: var(--primary-color);
 }
 
-.logo img {
-    height: 40px;
-    margin-right: var(--spacing-xs);
-}
-
-.logo span {
-    color: var(--secondary-color);
-    margin-left: 5px; /* Added margin to create space between CARE and Lab */
-}
-
 .nav-links {
     display: flex;
-    gap: calc(var(--spacing-md) + 10px); /* Increased gap by 10px */
+    gap: calc(var(--spacing-md) + 10px);
     list-style: none;
 }
 
 .nav-links a {
     font-weight: 500;
     font-size: 1.125rem;
+}
+
+/* Dropdown Menu for Mobile */
+.navbar .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1001;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+}
+
+.navbar .dropdown-menu.active {
+    display: block;
+}
+
+.navbar .dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--dark-color);
+    text-decoration: none;
+    font-size: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.navbar .dropdown-menu a:hover {
+    background-color: var(--light-color);
+}
+
+.navbar .menu-toggle {
+    display: none; /* Hidden by default */
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .navbar .menu-toggle {
+        display: block;
+    }
+
+    .navbar .dropdown-menu {
+        display: none;
+    }
+
+    .navbar .dropdown-menu.active {
+        display: block;
+    }
 }
 
 /* Hero Section */
