@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CARE Lab | Dr. Danielle Law | Wilfrid Laurier University</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/venn-diagram.css">
     <script src="scripts.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -17,8 +18,21 @@
                     CARE <span> Lab</span>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="index.html">Research</a></li>
-                    <li><a href="team.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="index.html">Research</a>
+                        <div class="dropdown-content">
+                            <a href="index.html#research">What We Do</a>
+                            <a href="index.html#research-projects">Research Projects</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="team.html">About Us</a>
+                        <div class="dropdown-content">
+                            <a href="team.html#pi">Principal Investigator</a>
+                            <a href="team.html#team">Team Members</a>
+                            <a href="team.html#lab-life">Lab Life</a>
+                        </div>
+                    </li>
                     <li><a href="publications.html">Publications</a></li>
                     <li><a href="team.html#join-us">Join Us</a></li>
                 </ul>
@@ -28,6 +42,23 @@
             </nav>
         </div>
     </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Child and Adolescent Research and Education Lab</h1>
+                <p>Studying how children, adolescents, and young adults develop cognitively and socio-emotionally as they interact with technology</p>
+                <div class="hero-buttons">
+                    <a href="#research" class="btn primary-btn">Explore Our Research</a>
+                    <a href="team.html#join-us" class="btn secondary-btn">Join Our Team</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/group/care-lab-banner.jpg" alt="CARE Lab Team">
+            </div>
+        </div>
+    </section>
 
     <section id="research" class="research">
         <div class="container">
@@ -47,13 +78,115 @@
 
                 <p>The Child and Adolescent Research and Education (CARE) Lab was established 2012 and is directed by Dr. Danielle M. Law, associate professor at Wilfrid Laurier University.</p>
 
-                <p><img src="images/group/care-lab-banner.jpg"/></p>
-
                 <p>The CARE Lab takes an interdisciplinary approach to the study of children and youth.</p>
 
                 <p>Our lab is, broadly speaking, interested in studying how children, adolescents, and young adults develop cognitively and socio-emotionally as they interact and socialize using various technologies.</p>
 
-                <p><img src="images/carevenn.png"/></p>
+                <div class="venn-container">
+                    <div class="circle research">
+                        <h2>Research</h2>
+                    </div>
+                    <div class="circle outreach">
+                        <h2>Community<br>Outreach</h2>
+                    </div>
+                    <div class="circle connections">
+                        <h2>Community<br>Connections</h2>
+                    </div>
+                    <div class="circle knowledge">
+                        <h2>Knowledge<br>Sharing</h2>
+                    </div>
+                    
+                    <div class="center-logo-container">
+                        <img src="images/care-logo-circle.png" alt="CARE Logo" class="center-logo">
+                    </div>
+                    
+                    <div class="item research-spotlight">Research Spotlight</div>
+                    <div class="item research-projects">Research Projects</div>
+                    <div class="item conferences">Conferences/<br>Publications</div>
+                    <div class="item findings">Using our findings to support our community</div>
+                    <div class="item community-needs">Supporting community needs</div>
+                    <div class="item laurier-community">Encouraging our Laurier Community</div>
+                    <div class="item care-conference">CARE Conference</div>
+                    <div class="item partnerships">Community Partnerships</div>
+                    <div class="item youth">Youth Programming</div>
+                    <div class="item workshops">Workshops/<br>Presentations</div>
+                    <div class="item social-media">Social media</div>
+                
+                    <div class="overlay"></div>
+                    
+                    <div class="info-box" id="research-info">
+                        <div class="info-header" style="border-color: #0078c8;">
+                            <h2 style="color: #0078c8;">Research</h2>
+                            <button class="close-btn">×</button>
+                        </div>
+                        <div class="info-content">
+                            <p>The CARE Lab conducts research focused on cyberbullying, aggression, and social media in childhood and adolescence. Our multidisciplinary approach examines online risks and safety for young people.</p>
+                            
+                            <h3>Research Spotlight</h3>
+                            <p>The CARE Lab is currently investigating how children and adolescents navigate the digital world, with a focus on understanding their experiences, perceptions, and strategies to deal with cyberbullying and online aggression.</p>
+                            
+                            <h3>Research Projects</h3>
+                            <p>Our research encompasses several ongoing projects focused on online behavior, digital citizenship, and the impact of technology on youth development.</p>
+                            
+                            <h3>Conferences/Publications</h3>
+                            <p>The CARE Lab regularly shares research findings through academic publications and presentations at national and international conferences.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-box" id="outreach-info">
+                        <div class="info-header" style="border-color: #6c2577;">
+                            <h2 style="color: #6c2577;">Community Outreach</h2>
+                            <button class="close-btn">×</button>
+                        </div>
+                        <div class="info-content">
+                            <p>The CARE Lab is committed to supporting communities through meaningful outreach programs that apply our research findings to real-world challenges.</p>
+                            
+                            <h3>Using our findings to support our community</h3>
+                            <p>We translate research into practical applications that benefit communities through evidence-based resources and toolkits for schools, parents, and community organizations.</p>
+                            
+                            <h3>Supporting community needs</h3>
+                            <p>The CARE Lab works directly with community partners to address local needs related to online safety and digital citizenship.</p>
+                            
+                            <h3>Encouraging our Laurier Community</h3>
+                            <p>We actively engage with the Wilfrid Laurier University community through student research opportunities and campus-wide initiatives promoting digital wellness.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-box" id="connections-info">
+                        <div class="info-header" style="border-color: #e6007e;">
+                            <h2 style="color: #e6007e;">Community Connections</h2>
+                            <button class="close-btn">×</button>
+                        </div>
+                        <div class="info-content">
+                            <p>The CARE Lab builds meaningful connections with community stakeholders to ensure our work has real-world impact and addresses genuine community concerns.</p>
+                            
+                            <h3>CARE Conference</h3>
+                            <p>Our annual CARE Conference brings together researchers, educators, and community partners to share cutting-edge research and build collaborative networks.</p>
+                            
+                            <h3>Community Partnerships</h3>
+                            <p>We maintain active partnerships with organizations including local school boards, youth-serving community organizations, and mental health service providers.</p>
+                            
+                            <h3>Youth Programming</h3>
+                            <p>The CARE Lab develops and delivers specialized programming for young people that promotes digital citizenship and responsible online behavior.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-box" id="knowledge-info">
+                        <div class="info-header" style="border-color: #00a651;">
+                            <h2 style="color: #00a651;">Knowledge Sharing</h2>
+                            <button class="close-btn">×</button>
+                        </div>
+                        <div class="info-content">
+                            <p>The CARE Lab is committed to making research accessible and useful through various knowledge-sharing strategies.</p>
+                            
+                            <h3>Workshops/Presentations</h3>
+                            <p>We regularly offer workshops and presentations tailored for diverse audiences including parents, educators, youth, and community organizations.</p>
+                            
+                            <h3>Social Media</h3>
+                            <p>The CARE Lab maintains an active presence across social media platforms to share research findings in accessible, user-friendly formats.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <p>With this in mind, our primary research focus has been in the area of:</p>
                 <ul>
@@ -75,7 +208,7 @@
                 <p>Students can choose to volunteer for one or all of these streams. If you are interested in joining our team or would like more information about what we do, do not hesitate to contact Danielle Law at dlaw@wlu.ca.</p>
             </div>
 
-            <div class="research-projects">
+            <section id="research-projects" class="research-projects">
                 <div class="section-header">
                     <h2>Current Research Projects</h2>
                     <div class="line"></div>
