@@ -213,12 +213,36 @@ header {
         display: none; /* Hide default nav links */
     }
 
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+        z-index: 1000;
+    }
+
+    .nav-links.active li {
+        width: 100%;
+    }
+
+    .nav-links.active .dropdown-content {
+        position: static;
+        box-shadow: none;
+        width: 100%;
+        padding-left: 2rem;
+    }
+
     .navbar .menu-toggle {
         display: block; /* Show menu toggle button */
     }
 
     .navbar .dropdown-menu {
-        display: block; /* Show dropdown menu when toggled */
+        display: none; /* Hide dropdown menu by default */
     }
 }
 
