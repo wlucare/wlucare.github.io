@@ -14,90 +14,80 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Handle mobile dropdown menus
-    if (window.innerWidth <= 768) {
+    // Function to handle mobile dropdown menus
+    function setupMobileDropdowns() {
         const dropdownLinks = document.querySelectorAll('.dropdown > a');
         
+        // Remove existing event listeners by cloning and replacing elements
         dropdownLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const dropdownContent = this.nextElementSibling;
-                
-                // Close all other dropdowns
-                document.querySelectorAll('.dropdown-content').forEach(content => {
-                    if (content !== dropdownContent) {
-                        content.style.display = 'none';
-                    }
+            const clone = link.cloneNode(true);
+            link.parentNode.replaceChild(clone, link);
+        });
+        
+        // Add new event listeners based on current window width
+        const refreshedDropdownLinks = document.querySelectorAll('.dropdown > a');
+        
+        if (window.innerWidth <= 768) {
+            refreshedDropdownLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const dropdownContent = this.nextElementSibling;
+                    
+                    // Toggle current dropdown
+                    dropdownContent.style.display = 
+                        dropdownContent.style.display === 'block' ? 'none' : 'block';
                 });
-                
-                // Toggle current dropdown
-                dropdownContent.style.display = 
-                    dropdownContent.style.display === 'block' ? 'none' : 'block';
             });
-        });
-    }
-    
-    // Venn diagram functionality
-    if (document.querySelector('.venn-container')) {
-        // Add event listeners for overlay
-        const vennContainer = document.querySelector('.venn-container');
-        const overlay = vennContainer.querySelector('.overlay');
-        const circles = vennContainer.querySelectorAll('.circle');
-        
-        // Add click event listeners to circles
-        circles.forEach(circle => {
-            circle.addEventListener('click', function() {
-                const type = this.classList[1]; // Get the second class (research, outreach, etc.)
-                showInfo(type, vennContainer);
-            });
-        });
-        
-        // Add click event listener to overlay
-        if (overlay) {
-            overlay.addEventListener('click', function() {
-                closeInfo(vennContainer);
+        } else {
+            // Reset any inline styles for desktop view
+            document.querySelectorAll('.dropdown-content').forEach(content => {
+                content.style.display = '';
             });
         }
+    }
+    
+    // Initial setup
+    setupMobileDropdowns();
+    
+    // Re-setup on window resize
+    window.addEventListener('resize', setupMobileDropdowns);
+    
+    // Interactive cards functionality
+    if (document.querySelector('.interactive-nav')) {
+        const interactiveNav = document.querySelector('.interactive-nav');
+        const categoryCards = interactiveNav.querySelectorAll('.category-card');
+        const contentPanels = interactiveNav.querySelectorAll('.content-panel');
+        const closeButtons = interactiveNav.querySelectorAll('.close-btn');
+        
+        // Add click event listeners to category cards
+        categoryCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const type = this.classList[1]; // Get the second class (research, outreach, etc.)
+                
+                // Hide all panels first
+                contentPanels.forEach(panel => {
+                    panel.classList.remove('active');
+                });
+                
+                // Show the selected panel
+                const targetPanel = interactiveNav.querySelector(`#${type}-panel`);
+                if (targetPanel) {
+                    targetPanel.classList.add('active');
+                    
+                    // Scroll to the panel with smooth animation
+                    targetPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            });
+        });
         
         // Add click event listeners to close buttons
-        const closeButtons = vennContainer.querySelectorAll('.close-btn');
         closeButtons.forEach(button => {
             button.addEventListener('click', function() {
-                closeInfo(vennContainer);
+                const panel = this.closest('.content-panel');
+                if (panel) {
+                    panel.classList.remove('active');
+                }
             });
         });
     }
 });
-
-// Function to show info box when clicking on a circle
-function showInfo(type, container) {
-    // Reset all circles
-    container.querySelectorAll('.circle').forEach(circle => {
-        circle.classList.remove('active');
-    });
-    
-    // Activate selected circle
-    container.querySelector(`.${type}`).classList.add('active');
-    
-    // Show overlay
-    container.querySelector('.overlay').style.display = 'block';
-    
-    // Show info box
-    container.querySelector(`#${type}-info`).style.display = 'block';
-}
-
-// Function to close info box
-function closeInfo(container) {
-    // Reset all circles
-    container.querySelectorAll('.circle').forEach(circle => {
-        circle.classList.remove('active');
-    });
-    
-    // Hide overlay
-    container.querySelector('.overlay').style.display = 'none';
-    
-    // Hide all info boxes
-    container.querySelectorAll('.info-box').forEach(box => {
-        box.style.display = 'none';
-    });
-}

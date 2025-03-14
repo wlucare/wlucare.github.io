@@ -1,0 +1,270 @@
+/* Interactive Cards Navigation System */
+.interactive-nav {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Main category cards */
+.category-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.category-card {
+    position: relative;
+    width: calc(50% - 20px);
+    min-width: 280px;
+    border-radius: 15px;
+    padding: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 3px solid;
+}
+
+.category-card h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.category-card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.category-card .icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+/* Category specific styling */
+.category-card.research {
+    border-color: #0078c8;
+    background-color: rgba(0, 120, 200, 0.05);
+}
+
+.category-card.research h2,
+.category-card.research .icon {
+    color: #0078c8;
+}
+
+.category-card.outreach {
+    border-color: #6c2577;
+    background-color: rgba(108, 37, 119, 0.05);
+}
+
+.category-card.outreach h2,
+.category-card.outreach .icon {
+    color: #6c2577;
+}
+
+.category-card.connections {
+    border-color: #e6007e;
+    background-color: rgba(230, 0, 126, 0.05);
+}
+
+.category-card.connections h2,
+.category-card.connections .icon {
+    color: #e6007e;
+}
+
+.category-card.knowledge {
+    border-color: #00a651;
+    background-color: rgba(0, 166, 81, 0.05);
+}
+
+.category-card.knowledge h2,
+.category-card.knowledge .icon {
+    color: #00a651;
+}
+
+/* Hover effects */
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.category-card.research:hover {
+    background-color: rgba(0, 120, 200, 0.1);
+}
+
+.category-card.outreach:hover {
+    background-color: rgba(108, 37, 119, 0.1);
+}
+
+.category-card.connections:hover {
+    background-color: rgba(230, 0, 126, 0.1);
+}
+
+.category-card.knowledge:hover {
+    background-color: rgba(0, 166, 81, 0.1);
+}
+
+/* Content panels */
+.content-panel {
+    display: none;
+    width: 100%;
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.content-panel.active {
+    display: block;
+}
+
+.content-panel h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.content-panel p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Panel header */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid;
+}
+
+.panel-header h2 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.panel-header .close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.panel-header .close-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Topic cards inside panels */
+.topic-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.topic-card {
+    flex: 1 1 calc(33.333% - 15px);
+    min-width: 200px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border-left: 4px solid;
+}
+
+.topic-card h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.topic-card p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Panel and topic card colors */
+.content-panel.research .panel-header {
+    border-color: #0078c8;
+}
+
+.content-panel.research .panel-header h2 {
+    color: #0078c8;
+}
+
+.content-panel.research .topic-card {
+    border-left-color: #0078c8;
+}
+
+.content-panel.outreach .panel-header {
+    border-color: #6c2577;
+}
+
+.content-panel.outreach .panel-header h2 {
+    color: #6c2577;
+}
+
+.content-panel.outreach .topic-card {
+    border-left-color: #6c2577;
+}
+
+.content-panel.connections .panel-header {
+    border-color: #e6007e;
+}
+
+.content-panel.connections .panel-header h2 {
+    color: #e6007e;
+}
+
+.content-panel.connections .topic-card {
+    border-left-color: #e6007e;
+}
+
+.content-panel.knowledge .panel-header {
+    border-color: #00a651;
+}
+
+.content-panel.knowledge .panel-header h2 {
+    color: #00a651;
+}
+
+.content-panel.knowledge .topic-card {
+    border-left-color: #00a651;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .category-card {
+        width: 100%;
+    }
+    
+    .topic-card {
+        flex: 1 1 100%;
+    }
+}

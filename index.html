@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CARE Lab | Dr. Danielle Law | Wilfrid Laurier University</title>
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/venn-diagram.css">
+    <link rel="stylesheet" href="styles/interactive-cards.css">
     <script src="scripts.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -82,108 +82,125 @@
 
                 <p>Our lab is, broadly speaking, interested in studying how children, adolescents, and young adults develop cognitively and socio-emotionally as they interact and socialize using various technologies.</p>
 
-                <div class="venn-container">
-                    <div class="circle research">
-                        <h2>Research</h2>
-                    </div>
-                    <div class="circle outreach">
-                        <h2>Community<br>Outreach</h2>
-                    </div>
-                    <div class="circle connections">
-                        <h2>Community<br>Connections</h2>
-                    </div>
-                    <div class="circle knowledge">
-                        <h2>Knowledge<br>Sharing</h2>
+                <div class="interactive-nav">
+                    <div class="category-container">
+                        <div class="category-card research" id="research-card">
+                            <div class="icon"><i class="fas fa-microscope"></i></div>
+                            <h2>Research</h2>
+                            <p>Exploring how children and youth interact with technology</p>
+                        </div>
+                        
+                        <div class="category-card outreach" id="outreach-card">
+                            <div class="icon"><i class="fas fa-hands-helping"></i></div>
+                            <h2>Community Outreach</h2>
+                            <p>Applying research to support real-world communities</p>
+                        </div>
+                        
+                        <div class="category-card connections" id="connections-card">
+                            <div class="icon"><i class="fas fa-users"></i></div>
+                            <h2>Community Connections</h2>
+                            <p>Building relationships with stakeholders and partners</p>
+                        </div>
+                        
+                        <div class="category-card knowledge" id="knowledge-card">
+                            <div class="icon"><i class="fas fa-lightbulb"></i></div>
+                            <h2>Knowledge Sharing</h2>
+                            <p>Making research accessible through various channels</p>
+                        </div>
                     </div>
                     
-                    <div class="center-logo-container">
-                        <img src="images/care-logo-circle.png" alt="CARE Logo" class="center-logo">
-                    </div>
-                    
-                    <div class="item research-spotlight">Research Spotlight</div>
-                    <div class="item research-projects">Research Projects</div>
-                    <div class="item conferences">Conferences/<br>Publications</div>
-                    <div class="item findings">Using our findings to support our community</div>
-                    <div class="item community-needs">Supporting community needs</div>
-                    <div class="item laurier-community">Encouraging our Laurier Community</div>
-                    <div class="item care-conference">CARE Conference</div>
-                    <div class="item partnerships">Community Partnerships</div>
-                    <div class="item youth">Youth Programming</div>
-                    <div class="item workshops">Workshops/<br>Presentations</div>
-                    <div class="item social-media">Social media</div>
-                
-                    <div class="overlay"></div>
-                    
-                    <div class="info-box" id="research-info">
-                        <div class="info-header" style="border-color: #0078c8;">
-                            <h2 style="color: #0078c8;">Research</h2>
+                    <div class="content-panel research" id="research-panel">
+                        <div class="panel-header">
+                            <h2>Research</h2>
                             <button class="close-btn">×</button>
                         </div>
-                        <div class="info-content">
-                            <p>The CARE Lab conducts research focused on cyberbullying, aggression, and social media in childhood and adolescence. Our multidisciplinary approach examines online risks and safety for young people.</p>
+                        <p>The CARE Lab conducts research focused on cyberbullying, aggression, and social media in childhood and adolescence. Our multidisciplinary approach examines online risks and safety for young people.</p>
+                        
+                        <div class="topic-cards">
+                            <div class="topic-card">
+                                <h4>Research Spotlight</h4>
+                                <p>The CARE Lab is currently investigating how children and adolescents navigate the digital world, with a focus on understanding their experiences, perceptions, and strategies to deal with cyberbullying and online aggression.</p>
+                            </div>
                             
-                            <h3>Research Spotlight</h3>
-                            <p>The CARE Lab is currently investigating how children and adolescents navigate the digital world, with a focus on understanding their experiences, perceptions, and strategies to deal with cyberbullying and online aggression.</p>
+                            <div class="topic-card">
+                                <h4>Research Projects</h4>
+                                <p>Our research encompasses several ongoing projects focused on online behavior, digital citizenship, and the impact of technology on youth development.</p>
+                            </div>
                             
-                            <h3>Research Projects</h3>
-                            <p>Our research encompasses several ongoing projects focused on online behavior, digital citizenship, and the impact of technology on youth development.</p>
-                            
-                            <h3>Conferences/Publications</h3>
-                            <p>The CARE Lab regularly shares research findings through academic publications and presentations at national and international conferences.</p>
+                            <div class="topic-card">
+                                <h4>Conferences/Publications</h4>
+                                <p>The CARE Lab regularly shares research findings through academic publications and presentations at national and international conferences.</p>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="info-box" id="outreach-info">
-                        <div class="info-header" style="border-color: #6c2577;">
-                            <h2 style="color: #6c2577;">Community Outreach</h2>
+                    <div class="content-panel outreach" id="outreach-panel">
+                        <div class="panel-header">
+                            <h2>Community Outreach</h2>
                             <button class="close-btn">×</button>
                         </div>
-                        <div class="info-content">
-                            <p>The CARE Lab is committed to supporting communities through meaningful outreach programs that apply our research findings to real-world challenges.</p>
+                        <p>The CARE Lab is committed to supporting communities through meaningful outreach programs that apply our research findings to real-world challenges.</p>
+                        
+                        <div class="topic-cards">
+                            <div class="topic-card">
+                                <h4>Using our findings to support our community</h4>
+                                <p>We translate research into practical applications that benefit communities through evidence-based resources and toolkits for schools, parents, and community organizations.</p>
+                            </div>
                             
-                            <h3>Using our findings to support our community</h3>
-                            <p>We translate research into practical applications that benefit communities through evidence-based resources and toolkits for schools, parents, and community organizations.</p>
+                            <div class="topic-card">
+                                <h4>Supporting community needs</h4>
+                                <p>The CARE Lab works directly with community partners to address local needs related to online safety and digital citizenship.</p>
+                            </div>
                             
-                            <h3>Supporting community needs</h3>
-                            <p>The CARE Lab works directly with community partners to address local needs related to online safety and digital citizenship.</p>
-                            
-                            <h3>Encouraging our Laurier Community</h3>
-                            <p>We actively engage with the Wilfrid Laurier University community through student research opportunities and campus-wide initiatives promoting digital wellness.</p>
+                            <div class="topic-card">
+                                <h4>Encouraging our Laurier Community</h4>
+                                <p>We actively engage with the Wilfrid Laurier University community through student research opportunities and campus-wide initiatives promoting digital wellness.</p>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="info-box" id="connections-info">
-                        <div class="info-header" style="border-color: #e6007e;">
-                            <h2 style="color: #e6007e;">Community Connections</h2>
+                    <div class="content-panel connections" id="connections-panel">
+                        <div class="panel-header">
+                            <h2>Community Connections</h2>
                             <button class="close-btn">×</button>
                         </div>
-                        <div class="info-content">
-                            <p>The CARE Lab builds meaningful connections with community stakeholders to ensure our work has real-world impact and addresses genuine community concerns.</p>
+                        <p>The CARE Lab builds meaningful connections with community stakeholders to ensure our work has real-world impact and addresses genuine community concerns.</p>
+                        
+                        <div class="topic-cards">
+                            <div class="topic-card">
+                                <h4>CARE Conference</h4>
+                                <p>Our annual CARE Conference brings together researchers, educators, and community partners to share cutting-edge research and build collaborative networks.</p>
+                            </div>
                             
-                            <h3>CARE Conference</h3>
-                            <p>Our annual CARE Conference brings together researchers, educators, and community partners to share cutting-edge research and build collaborative networks.</p>
+                            <div class="topic-card">
+                                <h4>Community Partnerships</h4>
+                                <p>We maintain active partnerships with organizations including local school boards, youth-serving community organizations, and mental health service providers.</p>
+                            </div>
                             
-                            <h3>Community Partnerships</h3>
-                            <p>We maintain active partnerships with organizations including local school boards, youth-serving community organizations, and mental health service providers.</p>
-                            
-                            <h3>Youth Programming</h3>
-                            <p>The CARE Lab develops and delivers specialized programming for young people that promotes digital citizenship and responsible online behavior.</p>
+                            <div class="topic-card">
+                                <h4>Youth Programming</h4>
+                                <p>The CARE Lab develops and delivers specialized programming for young people that promotes digital citizenship and responsible online behavior.</p>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="info-box" id="knowledge-info">
-                        <div class="info-header" style="border-color: #00a651;">
-                            <h2 style="color: #00a651;">Knowledge Sharing</h2>
+                    <div class="content-panel knowledge" id="knowledge-panel">
+                        <div class="panel-header">
+                            <h2>Knowledge Sharing</h2>
                             <button class="close-btn">×</button>
                         </div>
-                        <div class="info-content">
-                            <p>The CARE Lab is committed to making research accessible and useful through various knowledge-sharing strategies.</p>
+                        <p>The CARE Lab is committed to making research accessible and useful through various knowledge-sharing strategies.</p>
+                        
+                        <div class="topic-cards">
+                            <div class="topic-card">
+                                <h4>Workshops/Presentations</h4>
+                                <p>We regularly offer workshops and presentations tailored for diverse audiences including parents, educators, youth, and community organizations.</p>
+                            </div>
                             
-                            <h3>Workshops/Presentations</h3>
-                            <p>We regularly offer workshops and presentations tailored for diverse audiences including parents, educators, youth, and community organizations.</p>
-                            
-                            <h3>Social Media</h3>
-                            <p>The CARE Lab maintains an active presence across social media platforms to share research findings in accessible, user-friendly formats.</p>
+                            <div class="topic-card">
+                                <h4>Social Media</h4>
+                                <p>The CARE Lab maintains an active presence across social media platforms to share research findings in accessible, user-friendly formats.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
