@@ -1,5 +1,6 @@
 # macOS system files
 .DS_Store
+images/.DS_Store
 .AppleDouble
 .LSOverride
 Icon

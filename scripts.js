@@ -52,41 +52,48 @@ document.addEventListener('DOMContentLoaded', function() {
     // Re-setup on window resize
     window.addEventListener('resize', setupMobileDropdowns);
     
-    // Interactive cards functionality
+    // Interactive cards functionality - Tab-based navigation
     if (document.querySelector('.interactive-nav')) {
         const interactiveNav = document.querySelector('.interactive-nav');
         const categoryCards = interactiveNav.querySelectorAll('.category-card');
         const contentPanels = interactiveNav.querySelectorAll('.content-panel');
-        const closeButtons = interactiveNav.querySelectorAll('.close-btn');
+        
+        // Function to set active tab and panel
+        function setActiveTab(tabType) {
+            // Remove active class from all cards
+            categoryCards.forEach(card => {
+                card.classList.remove('active-tab');
+            });
+            
+            // Add active class to selected card
+            const activeCard = interactiveNav.querySelector(`.category-card.${tabType}`);
+            if (activeCard) {
+                activeCard.classList.add('active-tab');
+            }
+            
+            // Hide all panels first
+            contentPanels.forEach(panel => {
+                panel.classList.remove('active');
+            });
+            
+            // Show the selected panel
+            const targetPanel = interactiveNav.querySelector(`#${tabType}-panel`);
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+                
+                // Scroll to the panel with smooth animation
+                targetPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+        
+        // Select Research tab by default
+        setActiveTab('research');
         
         // Add click event listeners to category cards
         categoryCards.forEach(card => {
             card.addEventListener('click', function() {
                 const type = this.classList[1]; // Get the second class (research, outreach, etc.)
-                
-                // Hide all panels first
-                contentPanels.forEach(panel => {
-                    panel.classList.remove('active');
-                });
-                
-                // Show the selected panel
-                const targetPanel = interactiveNav.querySelector(`#${type}-panel`);
-                if (targetPanel) {
-                    targetPanel.classList.add('active');
-                    
-                    // Scroll to the panel with smooth animation
-                    targetPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }
-            });
-        });
-        
-        // Add click event listeners to close buttons
-        closeButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const panel = this.closest('.content-panel');
-                if (panel) {
-                    panel.classList.remove('active');
-                }
+                setActiveTab(type);
             });
         });
     }

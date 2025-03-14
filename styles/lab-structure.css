@@ -1,0 +1,91 @@
+/* Lab Structure Styles */
+.lab-structure {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-left: 4px solid #6c2577;
+    border: 1px solid rgba(108, 37, 119, 0.2);
+}
+
+.lab-structure h3 {
+    color: #6c2577;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.structure-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.structure-list li {
+    position: relative;
+    padding: 8px 0 8px 30px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.structure-list li:last-child {
+    border-bottom: none;
+}
+
+.structure-list li:before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #6c2577;
+    font-weight: bold;
+}
+
+/* Responsibilities Section */
+.responsibilities {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 25px;
+    border-left: 4px solid #e6007e;
+    border: 1px solid rgba(230, 0, 126, 0.2);
+}
+
+.responsibilities h3 {
+    color: #e6007e;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.responsibilities-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.responsibilities-list li {
+    position: relative;
+    padding: 8px 0 8px 30px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.responsibilities-list li:before {
+    content: '•';
+    position: absolute;
+    left: 10px;
+    color: #e6007e;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .lab-structure,
+    .responsibilities {
+        padding: 15px;
+    }
+    
+    .structure-list li,
+    .responsibilities-list li {
+        padding-left: 25px;
+    }
+}

@@ -434,7 +434,7 @@ section {
 
 /* Team Gallery Section */
 .team-gallery {
-    background-color: var(--light-color);
+    background-color: white;
 }
 
 .gallery-grid {
@@ -476,7 +476,7 @@ section {
 
 /* Team Section */
 .team {
-    background-color: #f9f9f9;
+    background-color: white;
     padding: 4rem 0;
 }
 
@@ -545,7 +545,7 @@ section {
 
 /* Publications Section */
 .publications {
-    background-color: var(--light-color);
+    background-color: white;
     padding: 4rem 0;
 }
 
@@ -630,12 +630,12 @@ section {
     background: linear-gradient(135deg, rgba(107, 29, 115, 0.9), rgba(157, 75, 163, 0.8));
     color: white;
     text-align: center;
-    .quote-section {
-        padding: 60px 0;
-        background-color: #f8f9fa;
-        margin: 40px 0;
-        text-align: center;
-    }
+.quote-section {
+    padding: 60px 0;
+    background-color: white;
+    margin: 40px 0;
+    text-align: center;
+}
     
     .quote-section blockquote {
         max-width: 800px;
