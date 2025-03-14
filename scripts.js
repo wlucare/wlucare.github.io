@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const contentPanels = interactiveNav.querySelectorAll('.content-panel');
         
         // Function to set active tab and panel
-        function setActiveTab(tabType) {
+        function setActiveTab(tabType, shouldScroll = false) {
             // Remove active class from all cards
             categoryCards.forEach(card => {
                 card.classList.remove('active-tab');
@@ -81,19 +81,21 @@ document.addEventListener('DOMContentLoaded', function() {
             if (targetPanel) {
                 targetPanel.classList.add('active');
                 
-                // Scroll to the panel with smooth animation
-                targetPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                // Only scroll if explicitly requested
+                if (shouldScroll) {
+                    targetPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
             }
         }
         
-        // Select Research tab by default
-        setActiveTab('research');
+        // Select Research tab by default without scrolling
+        setActiveTab('research', false);
         
         // Add click event listeners to category cards
         categoryCards.forEach(card => {
             card.addEventListener('click', function() {
                 const type = this.classList[1]; // Get the second class (research, outreach, etc.)
-                setActiveTab(type);
+                setActiveTab(type, true); // Enable scrolling on user click
             });
         });
     }
