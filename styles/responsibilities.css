@@ -95,7 +95,7 @@
     
     .team-image {
         flex: 0 0 100%;
-        margin-bottom: 20px;
+        margin-bottom: var(--spacing-md);
     }
     
     .responsibilities-list {

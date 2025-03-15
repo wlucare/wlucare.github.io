@@ -1,0 +1,113 @@
+/* Team Grid Layout Styles */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.team-grid .team-member {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--box-shadow-sm);
+    transition: var(--transition-standard);
+    height: 100%;
+    border-top: 4px solid var(--primary-color);
+    padding: 0 var(--spacing-sm);
+}
+
+.team-grid .team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-md);
+}
+
+.team-grid .member-img {
+    position: relative;
+    height: auto;
+    max-height: 450px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-md) var(--spacing-sm);
+}
+
+.team-grid .member-img img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    border-radius: var(--border-radius-md);
+}
+
+.team-grid .team-member:hover .member-img img {
+    transform: scale(1.05);
+}
+
+.team-grid .member-info {
+    padding: var(--spacing-md);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-grid .member-info h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.4rem;
+}
+
+.team-grid .member-info .member-title {
+    color: #666;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.team-grid .member-bio {
+    margin-top: var(--spacing-sm);
+    color: #333;
+    line-height: 1.6;
+}
+
+.team-grid .member-bio p {
+    margin-bottom: var(--spacing-xs);
+}
+
+.team-grid .member-contact {
+    margin-top: auto;
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.team-grid .member-contact a {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.team-grid .member-contact a:hover {
+    color: var(--secondary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: var(--spacing-sm);
+    }
+    
+    .team-grid .member-img {
+        padding: var(--spacing-sm);
+    }
+    
+    .team-grid .member-info {
+        padding: var(--spacing-sm);
+    }
+}
